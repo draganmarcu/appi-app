@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { AppService, Items } from './app.service';
+import {Component} from '@angular/core';
+import {AppService, Items} from './app.service';
 
 @Component({
   selector: 'app-root',
@@ -9,28 +9,33 @@ import { AppService, Items } from './app.service';
 export class AppComponent {
   title = 'api-app';
   item: Items[] = [
-    { name: 'Marcu', age: 21 }    
+    {name: 'Marcu', age: 21}
   ];
 
+  freshPersonsList: Array<any> = [];
+  name = '';
+  age;
+
   constructor(private appService: AppService) {
-    this.showPerson()
   }
 
-  clickEvent() {
-    return this.showPerson()
+  addFreshPerson(): void {
+    const newlyCreatedPerson = {
+      name: this.name,
+      age: this.age
+    };
+    this.freshPersonsList.push(newlyCreatedPerson);
+
+    this.name = '';
+    this.age = null;
   }
 
-  
-    addButton(){
-      const values ="";
-      const inputv = document.getElementById('add');
-      const w = document.getElementById('faves');
-      const li = document.createElement("li");
-      li.appendChild(document.createTextNode("values"));
 
+  addPerson(): void {
+    this.item.push({name: 'Marcu', age: 21});
   }
-  
-  showPerson() {
-    this.item.push({ name: 'Marcu', age: 21 });
-  }
+
+
+  // Create method
+  // Search item by index in the array then remove it
 }

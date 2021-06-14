@@ -1,5 +1,4 @@
-
-<button (click)="clickEvent()">showPerson</button>
+<button (click)="addPerson()">Add Person</button>
 <ul>
   <li *ngFor="let m of item">
     {{ m.name }} {{ m.age}}
@@ -8,17 +7,20 @@
 
 <div class="">
   <h1>To Do App</h1>
-  <input type="text" name="" id="add">
-  <button (click)="addButton()">Add</button>
+  <input type="text" [(ngModel)]="name" placeholder="name" id="add">
+  <input type="number" [(ngModel)]="age" placeholder="age" id="age">
+  <button (click)="addFreshPerson()">Add</button>
   <button>Delete</button>
 </div>
 <div>
+  <h6>New Persons</h6>
   <ul id="faves">
-    <li>My first Item</li>
-    <li>My second Item</li>
-    <li></li>
+    <li *ngFor="let freshPerson of freshPersonsList">
+      {{freshPerson.name}} {{freshPerson.age}}
+      <button>Delete</button>
+    </li>
   </ul>
 </div>
 
 
-  
+
