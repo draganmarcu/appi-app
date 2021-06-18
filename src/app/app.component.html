@@ -17,7 +17,7 @@
   <ul id="faves">
     <li *ngFor="let freshPerson of freshPersonsList">
       {{freshPerson.name}} {{freshPerson.age}}
-      <button>Delete</button>
+      <button (click)="removeItem()">Delete</button>
     </li>
   </ul>
 </div>

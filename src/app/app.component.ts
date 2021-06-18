@@ -35,6 +35,10 @@ export class AppComponent {
     this.item.push({name: 'Marcu', age: 21});
   }
 
+  removeItem(index: number):void{
+    this.freshPersonsList.splice(index, 1);
+  }
+
 
   // Create method
   // Search item by index in the array then remove it
